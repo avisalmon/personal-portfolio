@@ -25,7 +25,7 @@ SECRET_KEY = 'gk-y3)armhqd&!5fk9^5p@vd1$(=%*u^21q(!enr2z2@!2%-s6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -126,4 +126,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 try:
     from .local_settings import *
 except ImportError:
-    print('Seemd like there is no local_srtting.py')
+    print('Seems like there is no local_srtting.py')
