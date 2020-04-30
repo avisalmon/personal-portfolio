@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h1>Hi, I am ionm all_blogs</h1>
+    <p>Number of blogs written {{ blogs.count }} blog{{ blogs.count|pluralize  }}</p>
+    <img src="{% static 'blog/81QFbLvpI9L._UX250_.png' %}" alt="">
+    <a href="{% static 'blog/chik.docx '%}">Get my book here</a>
+
+    {% for blog in blogs %}
+    <a href="{% url 'blog:blogView' blog.id %}"><h2>{{ blog.title}}</h2></a>
+    <br>
+    <p>{{ blog.description|safe|truncatechars:20}}</p>
+    <br>
+    <h2>Date: {{ blog.publish_date|date:'d M --> \Y\e\a\r Y'|upper}}</h2>
+    <br>
+
+    {% endfor %}
+
+    {% debug %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row border border-primary">
+    <div class="col-sm alert alert-secondary">
+      One of three columns
+    </div>
+    <div class="col-sm alert alert-success">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
+
+    <div class="container jumbotron">
+      <h1 class ="display-1">Welcome to my site</h1>
+      <h2><a href="{% url 'blog:all_blogs' %}">See all my Blogs</a></h2>
+      {{ projects }}
+      {% for project in projects %}
+        <br>
+        <h1>{{project}}</h1>
+        <h2>{{ project.description }}</h2>
+        <p>{{ project.image.url }}</p>
+        <img src="{{ project.image.url }}" alt="" height=200 width=400>
+        <br><br>
+
+        {% if project.link %}
+          <a href="{{ project.url}}">Link</a>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+    <ul class="list-group">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+
+{% endblock %}
