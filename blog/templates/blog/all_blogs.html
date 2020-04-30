@@ -4,7 +4,7 @@
     <h1>Hi, I am ionm all_blogs</h1>
     <p>Number of blogs written {{ blogs.count }} blog{{ blogs.count|pluralize  }}</p>
     <img src="{% static 'blog/81QFbLvpI9L._UX250_.png' %}" alt="">
-    <a href="{% static 'blog/chik.docx '%}">Get my book here</a>
+    <a href="{% static 'blog/chik.docx'%}">Get my book here</a>
 
     {% for blog in blogs %}
     <a href="{% url 'blog:blogView' blog.id %}"><h2>{{ blog.title}}</h2></a>
